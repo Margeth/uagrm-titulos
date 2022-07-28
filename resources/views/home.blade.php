@@ -123,6 +123,17 @@
         </div>
     </div>
 
+<?php
+session_start();
+if (isset($_SESSION['ingreso_view'])) {
+    $_SESSION['ingreso_view'] = $_SESSION['ingreso_view'] + 1;
+} else {
+    $_SESSION['ingreso_view'] = 1;
+}
+?>
+
+<p>Cantidad de Vistas: <?php echo $_SESSION['ingreso_view']; ?></p>
+
 <?php $__env->stopSection(); ?>
 
 <?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\laragon\www\uagrm-titulos\resources\views/home.blade.php ENDPATH**/ ?>
